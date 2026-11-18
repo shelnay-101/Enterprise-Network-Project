@@ -1,0 +1,24 @@
+! R2 configuration
+! Extracted from the project README.
+
+interface g0/0
+ ip address 172.16.0.62 255.255.255.192
+ no shutdown
+interface g1/0
+ ip address 172.16.0.94 255.255.255.224
+ no shutdown
+interface g2/0
+ ip address 172.16.0.110 255.255.255.240
+ no shutdown
+interface g4/0
+ ip address 192.168.2.2 255.255.255.252
+ no shutdown
+interface g3/0
+ ip address 10.0.1.1 255.255.255.252
+ no shutdown
+ip route 192.168.1.0 255.255.255.192 192.168.2.1
+ip route 192.168.1.64 255.255.255.224 192.168.2.1
+ip route 192.168.1.96 255.255.255.240 192.168.2.1
+ip route 10.0.0.0 255.255.255.128 10.0.1.2
+ip route 10.0.0.128 255.255.255.192 10.0.1.2
+ip route 10.0.0.192 255.255.255.224 10.0.1.2

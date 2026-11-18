@@ -1,0 +1,29 @@
+! SW3 configuration
+! Extracted from the project README.
+
+vlan 40
+ name Sales
+vlan 50
+ name Marketing
+vlan 60
+ name Support
+! Router-facing ports
+interface g0/1
+ switchport mode access
+ switchport access vlan 40
+interface g1/1
+ switchport mode access
+ switchport access vlan 50
+interface g2/1
+ switchport mode access
+ switchport access vlan 60
+! PC ports
+interface range f5/1, f6/1
+ switchport mode access
+ switchport access vlan 40
+interface range f3/1, f4/1
+ switchport mode access
+ switchport access vlan 50
+interface range f7/1, f8/1
+ switchport mode access
+ switchport access vlan 60

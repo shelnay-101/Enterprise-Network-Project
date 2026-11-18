@@ -1,0 +1,40 @@
+! MLS configuration
+! Extracted from the project README.
+
+ip routing
+vlan 70
+ name Accounting
+vlan 80
+ name Security
+vlan 90
+ name Management
+
+interface vlan 90
+ ip address 10.0.0.126 255.255.255.128
+ no shutdown
+interface vlan 70
+ ip address 10.0.0.190 255.255.255.192
+ no shutdown
+interface vlan 80
+ ip address 10.0.0.222 255.255.255.224
+ no shutdown
+
+! Routed link to R3
+interface g0/2
+ no switchport
+ ip address 10.0.0.225 255.255.255.252
+ no shutdown
+
+! Trunk to SW4
+interface g0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 70,90
+
+! Security PCs
+interface range f0/1, f0/3
+ switchport mode access
+ switchport access vlan 80
+
+ip route 0.0.0.0 0.0.0.0 10.0.0.226

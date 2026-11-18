@@ -1,0 +1,17 @@
+! SW4 configuration
+! Extracted from the project README.
+
+vlan 70
+ name Accounting
+vlan 90
+ name Management
+interface g0/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 70,90
+interface range f0/1, f0/4
+ switchport mode access
+ switchport access vlan 90
+interface range f0/2 - 3
+ switchport mode access
+ switchport access vlan 70

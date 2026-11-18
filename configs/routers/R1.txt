@@ -1,0 +1,23 @@
+! R1 configuration
+! Extracted from the project README.
+
+interface g0/0
+ no shutdown
+interface g0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.1.62 255.255.255.192
+interface g0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.1.94 255.255.255.224
+interface g0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.1.110 255.255.255.240
+interface g1/0
+ ip address 192.168.2.1 255.255.255.252
+ no shutdown
+ip route 172.16.0.0 255.255.255.192 192.168.2.2
+ip route 172.16.0.64 255.255.255.224 192.168.2.2
+ip route 172.16.0.96 255.255.255.240 192.168.2.2
+ip route 10.0.0.0 255.255.255.128 192.168.2.2
+ip route 10.0.0.128 255.255.255.192 192.168.2.2
+ip route 10.0.0.192 255.255.255.224 192.168.2.2

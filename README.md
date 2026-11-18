@@ -433,6 +433,6 @@ Requirements: [Cisco Packet Tracer](https://www.netacad.com/cisco-packet-tracer)
 
 ## Author
 
-Your Name | [LinkedIn](https://www.linkedin.com/in/your-profile) | [GitHub](https://github.com/your-username)
+Saw Shel Nay Say | [LinkedIn](www.linkedin.com/in/saw-shel-nay-say-94740a2b9) | [GitHub](https://github.com/shelnay-101)
 
 Licensed under the [MIT License](LICENSE).
